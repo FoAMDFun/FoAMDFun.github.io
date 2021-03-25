@@ -1,94 +1,169 @@
-h1 {
-  color: green;
+body {
+  background: linear-gradient(to right, rgb(32, 32, 32),white, white, rgb(32, 32, 32));  
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;    
+  overflow-y: hidden;
 }
 
-.container {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Open Sans';
-}
-
-.newsletter {
-  color: grey;
-  border: solid thin #cfcfcf;
-  border-radius: 3px;
-  padding: 10px;
-  padding-bottom: 20px;
-  position: relative;
-}
-
-.newsletter h3 {
-  margin-top: 0;
-}
-
-.newsletter button {
-  background-color: #3cb878;
-  border: none;
-  color: white;
-  display: block;
-  width: 100%;
-  height: 30px;
-  margin-bottom: 10px;
-}
-
-.newsletter input#email {
-  display: block;
-  width: 100%;
-  height: 30px;
-  margin-bottom: 4px;
-  border: solid #cfcfcf 1px;
-  border-radius: 3px;
-  box-sizing: border-box;
-}
-
-.newsletter #terms {
-  position: relative;
-  top: 1px;
-}
-
-.newsletter #closex {
-  position: absolute;
-  top: 0;
-  right: 4px;
-}
-
-#questionmark {
-  background: #3cb878;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  color: white;
-  font-size: 70px;
-  text-align: center;
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  box-shadow: 0 0 7px 2px grey;
-}
-
-.card {
-  background-color: #3cb878;
-  width: 180px;
-  text-align: center;
-  color: white;
-  padding: 20px 0;
-  box-shadow: 0 0 7px 2px grey;
-}
-
-.card h3 {
-  margin-bottom: 0;
-}
-
-#card-holder {
+#MainContent {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  align-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
+  min-height: inherit;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
 }
 
-a {
-  color: green;
+#MainBox {
+  width: 60%;
+  height: 550px;
+  box-shadow: 12px 12px 24px rgb(32, 32, 32);
+  background-color: white;
+  display: flex;
+  position: relative;
+}
+
+.GrayContainer {
+  display: inline-block;
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+#PhotoDescription, #PhotoTitle {
+  display: block;
+  color: white;
+  opacity: 1;
+  margin: 5px;
+  display: block;
+  padding-left: 28px;
+}
+
+#PhotoTitle {
+  font-family: 'Train One', cursive;
+  font-size: 52px;
+}
+
+#PhotoDescription {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.Arrow {
+  display: inline-block;
+  margin-left: 5px;
+  height: 24px;
+}
+
+#RightArrow {
+  transform: rotate(180deg);
+}
+
+.Panel {
+  display: inline-block;
+  height: 100%;
+  width: 2.5%;
+  display: flex;
+  align-items: center;
+}
+
+.BigPicture {
+  display: inline-block;
+  width: 95%;
+  height: 100%;
+}
+
+.BigPicture img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: inline-block;
+}
+
+#Photo {
+}
+
+#TransitionPhoto {
+  position: absolute;
+  width: 95%;
+  left: 2.5%;
+}
+#PhotoTitle {
+  font-size: 36px;
+}
+
+#BottomArea {
+  display: flex;
+  height: 128px;
+  width: 60%;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
+.Thumbnail {
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ThumbnailPhoto {
+  width: 85%;
+  height: 85%;
+  padding: 6px;
+  background-color: white;
+}
+
+.HiddenTitle {
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  font-family: 'Spectral SC', serif;
+  background: gray;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 6px;
+  display: none;    
+}
+
+.Thumbnail:hover .HiddenTitle {
+  display: block;
+}
+
+.Thumbnail:hover .ThumbnailPhoto {
+  box-shadow: 12px 12px 24px rgb(32, 32, 32);
+}
+
+/* Animations (for the fancy looks! :) ) */
+
+body {
+  opacity: 0;
+  animation-name: Drop;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+/* The background animation when the page loads */
+@keyframes Drop {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+/* Transitions when the pictures fade in and out */
+@keyframes FadeInPicture {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+/* Transitions when the pictures fade in and out */
+@keyframes FadeOutPicture {
+  0% {opacity: 1}
+  100% {opacity: 0}
 }
